@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TwitterClone</string>
+    <string name="userName">Val</string>
+    <string name="user">\@calleblr</string>
+    <string name="bulletDivider">•</string>
+    <string name="hours">14h</string>
+    <string name="lorem">Lorem ipsum dolor sit amet consectetur adipiscing elit gravida aptent, tortor mollis eros non senectus blandit curabitur dictumst, augue congue rhoncus leo in integer dapibus rutrum.Lorem ipsum dolor sit amet consectetur adipiscing elit gravida aptent, tortor mollis eros non senectus blandit curabitur dictumst, augue congue rhoncus leo in integer dapibus rutrum.</string>
+    <string name="for_you">For you</string>
+    <string name="following">Following</string>
+</resources>
