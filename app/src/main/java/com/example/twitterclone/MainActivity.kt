@@ -43,7 +43,6 @@ class MainActivity : AppCompatActivity() {
             setListeners(postView, tweet)
 
             llPosts.addView(postView)
-
         }
     }
 
