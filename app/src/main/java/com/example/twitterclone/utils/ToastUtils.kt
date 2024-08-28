@@ -1,4 +1,4 @@
-package com.example.twitterclone
+package com.example.twitterclone.utils
 
 import android.content.Context
 import android.widget.Toast

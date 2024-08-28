@@ -1,12 +1,18 @@
-package com.example.twitterclone
+package com.example.twitterclone.ll_activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.example.twitterclone.R
+import com.example.twitterclone.data.Tweet
+import com.example.twitterclone.rv_activity.RecyclerViewActivity
+import com.example.twitterclone.utils.showToast
 
 class MainActivity : AppCompatActivity() {
 
@@ -76,5 +82,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun initViews() {
         llPosts = findViewById(R.id.llPosts)
+        findViewById<Button>(R.id.btnFollowing).setOnClickListener{
+            startActivity(Intent(this, RecyclerViewActivity::class.java))
+        }
     }
 }

@@ -16,7 +16,7 @@
             android:name=".rv_activity.RecyclerViewActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ll_activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

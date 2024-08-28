@@ -1,12 +1,12 @@
 package com.example.twitterclone.rv_activity.adapters
 
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.twitterclone.R
-import com.example.twitterclone.Tweet
-import com.example.twitterclone.rv_activity.RecyclerViewActivity
+import com.example.twitterclone.data.Tweet
 
 class RVAdapterTweet (private val tweets: List<Tweet>): RecyclerView.Adapter<RVAdapterTweet.TweetViewHolder>() {
 
@@ -20,15 +20,18 @@ class RVAdapterTweet (private val tweets: List<Tweet>): RecyclerView.Adapter<RVA
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): RVAdapterTweet.PostViewHolder {
-        TODO("Not yet implemented")
+    ): TweetViewHolder {
+        val tweetView = LayoutInflater.from(parent.context)
+            .inflate(R.layout.tweet, parent, false)
+        return TweetViewHolder(tweetView)
     }
 
-    override fun onBindViewHolder(holder: RVAdapterTweet.PostViewHolder, position: Int) {
-        TODO("Not yet implemented")
+    override fun onBindViewHolder(holder: TweetViewHolder, position: Int) {
+        holder.tvUserName.text = tweets[position].userName
+        holder.tvName.text = tweets[position].user
+        holder.tvPostTime.text = tweets[position].postTime
+        holder.tvText.text = tweets[position].text
     }
 
-    override fun getItemCount(): Int {
-        TODO("Not yet implemented")
-    }
+    override fun getItemCount(): Int = tweets.size
 }
