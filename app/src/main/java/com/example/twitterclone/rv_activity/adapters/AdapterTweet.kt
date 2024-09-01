@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.twitterclone.R
 import com.example.twitterclone.data.Tweet
 
-class RVAdapterTweet (private val tweets: List<Tweet>): RecyclerView.Adapter<TweetViewHolder>() {
+class AdapterTweet (private var tweets: List<Tweet>): RecyclerView.Adapter<TweetViewHolder>() {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -22,4 +22,9 @@ class RVAdapterTweet (private val tweets: List<Tweet>): RecyclerView.Adapter<Twe
     }
 
     override fun getItemCount(): Int = tweets.size
+
+    fun submitList(newTweets: List<Tweet>){
+        tweets = newTweets
+        notifyDataSetChanged()
+    }
 }

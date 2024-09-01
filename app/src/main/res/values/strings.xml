@@ -7,4 +7,7 @@
     <string name="lorem">Lorem ipsum dolor sit amet consectetur adipiscing elit gravida aptent, tortor mollis eros non senectus blandit curabitur dictumst, augue congue rhoncus leo in integer dapibus rutrum.Lorem ipsum dolor sit amet consectetur adipiscing elit gravida aptent, tortor mollis eros non senectus blandit curabitur dictumst, augue congue rhoncus leo in integer dapibus rutrum.</string>
     <string name="for_you">For you</string>
     <string name="following">Following</string>
+    <string name="get_posts">Obtener Posts</string>
+    <string name="delete_posts">Eliminar Posts</string>
+    <string name="update_posts">Modificar Post</string>
 </resources>

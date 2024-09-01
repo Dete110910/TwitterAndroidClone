@@ -2,23 +2,27 @@ package com.example.twitterclone.rv_activity.adapters
 
 import android.view.View
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.twitterclone.R
 import com.example.twitterclone.data.Tweet
+import com.example.twitterclone.databinding.TweetBinding
 import com.example.twitterclone.utils.showToast
 
 class TweetViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     val view = view
+    val binding = TweetBinding.bind(view)
 
     fun render(tweet: Tweet) {
-        view.findViewById<TextView>(R.id.tvUserName).text = tweet.userName
-        view.findViewById<TextView>(R.id.tvUser).text = tweet.user
-        view.findViewById<TextView>(R.id.tvPostTime).text = tweet.postTime
-        view.findViewById<TextView>(R.id.tvTextTweet).text = tweet.text
+        binding.tvUserName.text = tweet.userName
+        binding.tvUser.text = tweet.user
+        binding.tvPostTime.text = tweet.postTime
+        binding.tvTextTweet.text = tweet.text
+        binding.ivProfilePicture.setImageResource(tweet.photo)
 
-        view.findViewById<ImageButton>(R.id.ibComment).setOnClickListener {
+        binding.ibComment.setOnClickListener {
             view.context.showToast("Funcionalidad de comentarios aún no implementada")
         }
 
