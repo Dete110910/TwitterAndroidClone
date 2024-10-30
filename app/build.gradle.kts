@@ -50,4 +50,12 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    // Dependencias principales de Jetpack Compose
+    implementation(libs.androidx.ui)
+    implementation(libs.androidx.material)
+    implementation(libs.androidx.ui.tooling.preview)
+
+    // Necesario para la compatibilidad entre Views y Compose
+    implementation(libs.androidx.activity.compose)
 }

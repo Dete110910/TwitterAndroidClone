@@ -3,9 +3,11 @@ package com.example.twitterclone.rv_activity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.material.Button
+import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.twitterclone.R
 import com.example.twitterclone.data.Tweet
 import com.example.twitterclone.databinding.ActivityRecyclerViewBinding
@@ -39,10 +41,24 @@ class RecyclerViewActivity : AppCompatActivity() {
 
     private fun setListeners() {
         with(binding) {
-            btnGetPosts.setOnClickListener {
-                if (tweetViewModel.uiState.value.tweets.isEmpty()) fillTweetList()
-                else { tweetViewModel.getTweets() }
+
+            btnGetPostsCompose.setContent {
+                MyGetPostsButton(buttonText = getString(R.string.get_posts)) {
+                    if (tweetViewModel.uiState.value.tweets.isEmpty()) fillTweetList()
+                    else tweetViewModel.getTweets()
+                }
             }
+            /*
+
+
+            btnGetPostsCompose.setOnClickListener {
+                if (tweetViewModel.uiState.value.tweets.isEmpty()) fillTweetList()
+                else {
+                    tweetViewModel.getTweets()
+                }
+            }
+
+             */
 
             btnDeletePosts.setOnClickListener {
                 tweetViewModel.deleteRandomTweet()
@@ -71,3 +87,11 @@ class RecyclerViewActivity : AppCompatActivity() {
         }
     }
 }
+
+@Composable
+fun MyGetPostsButton(buttonText: String, onClick: () -> Unit) {
+    Button(onClick = onClick) {
+        Text(text = buttonText)
+    }
+}
+
