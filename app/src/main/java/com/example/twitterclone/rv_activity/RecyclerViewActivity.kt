@@ -1,11 +1,13 @@
 package com.example.twitterclone.rv_activity
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.ComposeView
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.twitterclone.R
@@ -40,7 +42,10 @@ class RecyclerViewActivity : AppCompatActivity() {
     }
 
     private fun setListeners() {
+
         with(binding) {
+
+            Log.d("TEST--", "Compose")
 
             btnGetPostsCompose.setContent {
                 MyGetPostsButton(buttonText = getString(R.string.get_posts)) {
@@ -50,7 +55,15 @@ class RecyclerViewActivity : AppCompatActivity() {
             }
             /*
 
+            btnGetPostsCompose.setContent {
+                /*
+                MyGetPostsButton(buttonText = getString(R.string.get_posts)) {
+                    if (tweetViewModel.uiState.value.tweets.isEmpty()) fillTweetList()
+                    else tweetViewModel.getTweets()
+                }
 
+
+            }*/
             btnGetPostsCompose.setOnClickListener {
                 if (tweetViewModel.uiState.value.tweets.isEmpty()) fillTweetList()
                 else {

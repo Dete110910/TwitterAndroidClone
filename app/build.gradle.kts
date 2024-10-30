@@ -58,4 +58,5 @@ dependencies {
 
     // Necesario para la compatibilidad entre Views y Compose
     implementation(libs.androidx.activity.compose)
+    debugImplementation(libs.androidx.ui.tooling)
 }
